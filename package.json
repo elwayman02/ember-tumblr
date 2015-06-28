@@ -11,12 +11,18 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elwayman02/ember-tumblr.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
   "author": "Jordan Hawker <hawker.jordan@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elwayman02/ember-tumblr/issues"
+  },
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
     "ember-cli": "0.2.7",
