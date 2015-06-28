@@ -1,6 +1,6 @@
-# Ember-tumblr
+# Ember Tumblr
 
-This README outlines the details of collaborating on this Ember addon.
+This addon allows you to quickly and effortlessly integrate the Tumblr API into your Ember application.
 
 ## Installation
 

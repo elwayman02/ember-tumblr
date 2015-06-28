@@ -1,0 +1,21 @@
+import DS from 'ember-data';
+
+const attr = DS.attr;
+
+export default DS.Model.extend({
+  blog_name: attr('string'),
+  post_url: attr('string'),
+  type: attr('string'),
+  timestamp: attr('number'),
+  date: attr('string'),
+  format: attr('string'),
+  reblog_key: attr('string'),
+  // tags
+  bookmarklet: attr('boolean'),
+  mobile: attr('boolean'),
+  source_url: attr('string'),
+  source_title: attr('string'),
+  liked: attr('boolean'),
+  state: attr('string'),
+  total_posts: attr('number')
+});
