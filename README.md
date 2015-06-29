@@ -1,25 +1,62 @@
 # Ember Tumblr
+[![Build Status](https://travis-ci.org/elwayman02/ember-tumblr.svg?branch=master)](https://travis-ci.org/elwayman02/ember-tumblr)
+[![Dependency Status](https://www.versioneye.com/user/projects/55916efd396561001900007a/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55916efd396561001900007a)
+[![Code Climate](https://codeclimate.com/github/elwayman02/ember-tumblr/badges/gpa.svg)](https://codeclimate.com/github/elwayman02/ember-tumblr)
+[![Codacy Badge](https://www.codacy.com/project/badge/3d21cc0516214628900f3403de2ebe63)](https://www.codacy.com/app/hawker-jordan/ember-tumblr)
 
 This addon allows you to quickly and effortlessly integrate the Tumblr API into your Ember application.
 
-## Installation
+Note: This project is still in a pre-stable (1.0.0) release.  Not all functionality is supported, but the basic text post usage is stable.
 
-* `git clone` this repository
+## Usage
+
+First, and most importantly, make sure to register Tumblr application for you account to get an OAuth key: https://www.tumblr.com/oauth/apps
+
+Once you have that, create an adapter named `tumblr-post` to set up your blog url and API key.
+```javascript
+// adapters/tumblr-post.js
+import PostAdapter from 'ember-tumblr/adapters/tumblr-post';
+
+export default PostAdapter.extend({
+  blogUrl: 'myblog.tumblr.com',
+  apiKey: 'myTumblrApiKey'
+});
+```
+
+Then, simply create a route for your blog to retrieve the data, and utilize the ```tumblr-blog``` component in its template!
+```javascript
+// routes/blog.js
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model() {
+    return this.store.find('tumblr-post');
+  }
+});
+```
+
+```handlebars
+<!-- templates/blog.hbs -->
+{{tumblr-blog posts=model}}
+```
+
+And you're done! Ember-Tumblr can be customized far beyond this to retrieve specific types of posts or override the default templates, but that's all you need to do to get started!
+
+## Contributing To Ember-Tumblr
+
+### Installation
+
+* `git clone git@github.com:elwayman02/ember-tumblr.git`
+* `npm install -g ember-cli`
 * `npm install`
 * `bower install`
 
-## Running
+### Running
 
-* `ember server`
+* `ember s` or `ember server`
 * Visit your app at http://localhost:4200.
 
-## Running Tests
+### Running Tests
 
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+* `npm test`
+* `npm test --server`
