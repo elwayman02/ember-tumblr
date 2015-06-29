@@ -1,4 +1,4 @@
-import PostAdapter from 'ember-tumblr/adapters/post';
+import PostAdapter from 'ember-tumblr/adapters/tumblr-post';
 
 export default PostAdapter.extend({
   blogUrl: 'jordanhawker.tumblr.com',

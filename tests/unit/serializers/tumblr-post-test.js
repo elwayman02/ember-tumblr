@@ -1,8 +1,8 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('post', 'Unit | Serializer | post', {
+moduleForModel('tumblr-post', 'Unit | Serializer | tumblr-post', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:post']
+  needs: ['serializer:tumblr-post']
 });
 
 // Replace this with your real tests.

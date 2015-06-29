@@ -18,7 +18,7 @@ export default DS.RESTSerializer.extend({
         delete post.tags;
         return post;
       });
-      return { posts: posts };
+      return { 'tumblr-posts': posts };
     }
     return payload;
   }

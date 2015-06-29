@@ -1,6 +1,6 @@
 {
   "name": "ember-tumblr",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Ember Addon for integrating a Tumblr blog",
   "directories": {
     "doc": "doc",
@@ -9,7 +9,7 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember try:testall"
+    "test": "ember test"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('post', 'Unit | Model | post', {
+moduleForModel('tumblr-post-text', 'Unit | Model | tumblr post text', {
   // Specify the other units that are required for this test.
   needs: []
 });
