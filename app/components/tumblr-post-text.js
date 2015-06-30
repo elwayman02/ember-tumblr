@@ -1,1 +1,5 @@
-export { default } from 'ember-tumblr/components/tumblr-post-text';
+import TumblrPost from './tumblr-post';
+
+export default TumblrPost.extend({
+  classNames: ['tumblr-post-text']
+});
