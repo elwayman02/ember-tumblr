@@ -12,7 +12,7 @@ Note: This project is still in a pre-stable (1.0.0) release.  Not all functional
 
 ## Usage
 
-First, and most importantly, make sure to register Tumblr application for you account to get an OAuth key: https://www.tumblr.com/oauth/apps
+First, and most importantly, make sure to register a Tumblr application for your account to get an OAuth key: https://www.tumblr.com/oauth/apps
 
 Once you have that, create an adapter named `tumblr-post` to set up your blog url and API key.
 ```javascript
