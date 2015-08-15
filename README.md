@@ -14,6 +14,11 @@ Note: This project is still in a pre-stable (1.0.0) release.  Not all functional
 
 First, and most importantly, make sure to register a Tumblr application for your account to get an OAuth key: https://www.tumblr.com/oauth/apps
 
+Then, install this addon:
+```shell
+ember install ember-tumblr
+```
+
 Once you have that, create an adapter named `tumblr-post` to set up your blog url and API key.
 ```javascript
 // adapters/tumblr-post.js
