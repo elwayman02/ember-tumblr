@@ -28,4 +28,6 @@ test('defaults', function (assert) {
   const sortBy = component.get('sortBy');
   assert.ok(Ember.isArray(sortBy), 'sortBy is array');
   assert.equal(sortBy.length, 0, 'sortBy has no elements');
+
+  assert.ok(component.get('formatDates'), 'date formatting enabled by default');
 });
