@@ -26,6 +26,8 @@ test('defaults', function (assert) {
   assert.ok(component.get('collapsed'), 'post is set to collapse by default if collapsible');
   assert.ok(!component.get('isCollapsed'), 'post will not collapse by default, because it is not collapsible');
   assert.ok(component.get('formatDates'), 'date formatting enabled by default');
+  assert.ok(Ember.isPresent(component.get('collapsedText')), 'default collapsedText is supplied');
+  assert.ok(Ember.isPresent(component.get('expandedText')), 'default expandedText is supplied');
 });
 
 test('isCollapsed', function (assert) {
