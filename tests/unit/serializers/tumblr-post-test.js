@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('tumblr-post', 'Unit | Serializer | tumblr-post', {
@@ -6,10 +7,25 @@ moduleForModel('tumblr-post', 'Unit | Serializer | tumblr-post', {
 });
 
 // Replace this with your real tests.
-test('it serializes records', function(assert) {
-  var record = this.subject();
+test('it serializes records', function (assert) {
+  const record = this.subject();
 
-  var serializedRecord = record.serialize();
+  const serializedRecord = record.serialize();
 
   assert.ok(serializedRecord);
 });
+
+//test('normalizePayload', function (assert) {
+//  const record = this.subject();
+//  const payload = { response: { posts: [{
+//    id: 1,
+//    tags: ['foo', 'bar']
+//  }, {
+//    id: 2,
+//    tags: ['bar', 'baz']
+//  }]}};
+//
+//  const result = record.normalizePayload(payload);
+//  const posts = result['tumblr-posts'];
+//  assert.ok(Ember.isPresent(posts), 'posts mapped to the correct key');
+//});

@@ -12,5 +12,8 @@
     "jquery": "~2.1.4",
     "loader.js": "3.3.0",
     "qunit": "~1.18.0"
+  },
+  "devDependencies": {
+    "js.edgar": "1.0.3"
   }
 }
