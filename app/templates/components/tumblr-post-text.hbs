@@ -1,4 +1,12 @@
-<span class="tumblr-title">{{post.title}}</span>
+<span class="tumblr-title">
+  {{#if postsRoute}}
+    {{#link-to postsRoute post.id}}
+      {{post.title}}
+    {{/link-to}}
+  {{else}}
+    {{post.title}}
+  {{/if}}
+</span>
 
 <span class="tumblr-date">{{post.date}}</span>
 

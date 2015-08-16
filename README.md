@@ -15,11 +15,13 @@ Note: This project is still in a pre-stable (1.0.0) release.  Not all functional
 First, and most importantly, make sure to register a Tumblr application for your account to get an OAuth key: https://www.tumblr.com/oauth/apps
 
 Then, install this addon:
+
 ```shell
 ember install ember-tumblr
 ```
 
 Once you have that, create an adapter named `tumblr-post` to set up your blog url and API key.
+
 ```javascript
 // adapters/tumblr-post.js
 import PostAdapter from 'ember-tumblr/adapters/tumblr-post';
@@ -31,13 +33,14 @@ export default PostAdapter.extend({
 ```
 
 Then, simply create a route for your blog to retrieve the data, and utilize the ```tumblr-blog``` component in its template!
+
 ```javascript
 // routes/blog.js
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model() {
-    return this.store.find('tumblr-post');
+  model() { // Retrieve all posts of type "text"
+    return this.store.find('tumblr-post-text');
   }
 });
 ```
@@ -47,7 +50,41 @@ export default Ember.Route.extend({
 {{tumblr-blog posts=model}}
 ```
 
-And you're done! Ember-Tumblr can be customized far beyond this to retrieve specific types of posts or override the default templates, but that's all you need to do to get started!
+And you're done! Ember-Tumblr can be customized far beyond this to retrieve specific 
+types of posts or override the default templates, but that's all you need to do to get started!
+
+### Linking to Individual Posts
+
+If you want Ember-Tumblr to provide links to individual posts (by id), add the `postsRoute` option when defining `tumblr-blog`:
+
+```handlebars
+<!-- templates/blog.hbs -->
+{{tumblr-blog
+  posts=model
+  postsRoute='post'}}
+```
+
+Then, define the route and template for your `postsRoute`:
+
+```javascript
+// routes/post.js
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model(params/*, transition*/) {
+    return this.store.find('tumblr-post-text', {
+      id: params.post_id
+    }).then(function (posts) {
+      return posts.get('firstObject');
+    });
+  }
+});
+```
+
+```javascript
+// routes/post.hbs
+{{tumblr-post-text post=model}}
+```
 
 ## Contributing To Ember-Tumblr
 

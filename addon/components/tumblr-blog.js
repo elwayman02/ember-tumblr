@@ -1,5 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['tumblr-blog']
+  classNames: ['tumblr-blog'],
+  postsRoute: null
 });
