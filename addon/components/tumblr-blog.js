@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['tumblr-blog'],
-  posts: [],
+  posts: Ember.A([]),
   postsRoute: null,
   collapsible: false,
   collapseByDefault: true,
