@@ -8,7 +8,13 @@
   {{/if}}
 </span>
 
-<span class="tumblr-date">{{post.date}}</span>
+<span class="tumblr-date">
+  {{#if formatDates}}
+    {{format-date post.date day='numeric' month='long' year='numeric'}}
+  {{else}}
+    {{post.date}}
+  {{/if}}
+</span>
 
 <div class="tumblr-body">
   {{{post.body}}}

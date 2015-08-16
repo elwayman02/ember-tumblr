@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   postsRoute: null,
   collapsible: false,
   collapseByDefault: true,
+  formatDates: true,
   sortBy: [],
   sortedPosts: Ember.computed.sort('posts', 'sortBy')
 });

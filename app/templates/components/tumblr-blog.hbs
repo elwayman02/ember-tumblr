@@ -2,20 +2,23 @@
   {{#if collapsible}}
     {{#if collapseByDefault}}
       {{tumblr-post
-      post=post
-      postsRoute=postsRoute
-      collapsible=true
-      collapsed=true}}
+        post=post
+        postsRoute=postsRoute
+        collapsible=true
+        collapsed=true
+        formatDates=formatDates}}
     {{else}}
       {{tumblr-post
-      post=post
-      postsRoute=postsRoute
-      collapsible=true
-      collapsed=false}}
+        post=post
+        postsRoute=postsRoute
+        collapsible=true
+        collapsed=false
+        formatDates=formatDates}}
     {{/if}}
   {{else}}
     {{tumblr-post
-    post=post
-    postsRoute=postsRoute}}
+      post=post
+      postsRoute=postsRoute
+      formatDates=formatDates}}
   {{/if}}
 {{/each}}
