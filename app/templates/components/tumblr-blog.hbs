@@ -1,24 +1,30 @@
-{{#each sortedPosts as |post|}}
-  {{#if collapsible}}
-    {{#if collapseByDefault}}
-      {{tumblr-post
-        post=post
-        postsRoute=postsRoute
-        collapsible=true
-        collapsed=true
-        formatDates=formatDates}}
+{{#if sortedPosts.length}}
+  {{#each sortedPosts as |post|}}
+    {{#if collapsible}}
+      {{#if collapseByDefault}}
+        {{tumblr-post
+          post=post
+          postsRoute=postsRoute
+          collapsible=true
+          collapsed=true
+          formatDates=formatDates}}
+      {{else}}
+        {{tumblr-post
+          post=post
+          postsRoute=postsRoute
+          collapsible=true
+          collapsed=false
+          formatDates=formatDates}}
+      {{/if}}
     {{else}}
       {{tumblr-post
         post=post
         postsRoute=postsRoute
-        collapsible=true
-        collapsed=false
         formatDates=formatDates}}
     {{/if}}
-  {{else}}
-    {{tumblr-post
-      post=post
-      postsRoute=postsRoute
-      formatDates=formatDates}}
+  {{/each}}
+{{else}}
+  {{#if showErrors}}
+    <span class="tumblr-error">{{errorMessage}}</span>
   {{/if}}
-{{/each}}
+{{/if}}

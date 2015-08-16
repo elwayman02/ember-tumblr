@@ -37,6 +37,18 @@ export default Ember.Component.extend({
   formatDates: true,
 
   /**
+   * Display an error message instead of attempting to render posts when none are returned
+   * @type {boolean}
+   * @default
+   */
+  showErrors: true,
+
+  /**
+   * Error message to display when no posts were found
+   */
+  errorMessage: "We're sorry, we were unable to retrieve any posts. Please check back later!",
+
+  /**
    * Configurable Sort Options
    * @type {Array.string}
    * @default

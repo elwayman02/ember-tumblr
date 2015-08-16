@@ -30,4 +30,6 @@ test('defaults', function (assert) {
   assert.equal(sortBy.length, 0, 'sortBy has no elements');
 
   assert.ok(component.get('formatDates'), 'date formatting enabled by default');
+  assert.ok(component.get('showErrors'), 'error is displayed by default if no posts are found');
+  assert.ok(Ember.isPresent(component.get('errorMessage')), 'default error message is supplied');
 });
