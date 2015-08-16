@@ -129,6 +129,7 @@ If you are using the `tumblr-post` component (or any of its derivatives) and wan
   post=model
   collapsible=true <!-- allows the post to be collapsed -->
   collapsed=false}} <!-- overrides the default to make it expanded when rendered -->
+```
 
 ### Sorting Posts
 
