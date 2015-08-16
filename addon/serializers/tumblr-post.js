@@ -2,8 +2,18 @@ import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.RESTSerializer.extend({
+  /**
+   * Post Type
+   * @type {string}
+   * @default
+   */
   type: '',
 
+  /**
+   * Use Post Type to determine model name for serializing
+   * @param {string} payloadKey The incoming payload key
+   * @returns {string} The modified key
+   */
   modelNameFromPayloadKey(payloadKey) {
     const type = this.get('type');
     if (Ember.isPresent(type)) {
@@ -12,6 +22,11 @@ export default DS.RESTSerializer.extend({
     return this._super(payloadKey);
   },
 
+  /**
+   * Normalize the payload to match our models
+   * @param {object} payload The incoming payload
+   * @returns {object} The modified payload
+   */
   normalizePayload(payload) {
     if (payload.response && payload.response.posts) {
       const posts = payload.response.posts.map(function (post) {
