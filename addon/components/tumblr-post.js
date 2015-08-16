@@ -4,14 +4,17 @@ export default Ember.Component.extend({
   classNames: ['tumblr-post'],
   postsRoute: null,
   collapsible: false,
-  collapsed: false,
+  collapsed: true,
+
+  collapsedText: 'View More',
+  expandedText: 'Collapse Post',
 
   isCollapsed: Ember.computed('collapsible', 'collapsed', function () {
     return this.get('collapsible') && this.get('collapsed');
   }),
 
-  expandText: Ember.computed('isCollapsed', function () {
-    return this.get('isCollapsed') ? 'View More' : 'Collapse Post';
+  expandButtonText: Ember.computed('isCollapsed', 'collapsedText', 'expandedText', function () {
+    return this.get('isCollapsed') ? this.get('collapsedText') : this.get('expandedText');
   }),
 
   actions: {
