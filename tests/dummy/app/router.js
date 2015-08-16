@@ -9,6 +9,8 @@ Router.map(function() {
   this.route('index', { path: '/' });
   this.route('blog');
   this.route('linked-blog');
+  this.route('collapsed-blog');
+  this.route('uncollapsed-blog');
   this.route('post', { path: '/posts/:post_id' });
 });
 

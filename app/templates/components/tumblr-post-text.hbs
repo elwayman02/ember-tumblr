@@ -13,3 +13,7 @@
 <div class="tumblr-body">
   {{{post.body}}}
 </div>
+
+{{#if collapsible}}
+  <button {{action 'expand'}} class="tumblr-expand-button">{{expandButtonText}}</button>
+{{/if}}
