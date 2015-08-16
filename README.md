@@ -86,6 +86,50 @@ export default Ember.Route.extend({
 {{tumblr-post-text post=model}}
 ```
 
+### Collapsible Posts
+
+Ember-Tumblr supports collapsible posts, via class styles you can implement. To activate this feature, set `collapsible` to true (defaults to false).
+
+```handlebars
+<!-- templates/blog.hbs -->
+{{tumblr-blog
+  posts=model
+  collapsible=true}}
+```
+
+This will add a `.tumblr-post-collapsed` class to all posts by default, and a button at the bottom of the post that allows users to toggle the collapse (removing the class). 
+To implement styles for the collapse, you could add something like this to your project:
+
+```
+<!-- styles/blog.scss -->
+.tumblr-post {
+  &.tumblr-post-collapsed {
+    .tumblr-body {
+      max-height: 300px;
+      overflow: hidden;
+    }
+  }
+}
+```
+
+If you want posts to be expanded by default but still be collapsible, just set `collapseByDefault` to false (defaults to true, only used if `collapsible` is also true).
+
+```handlebars
+<!-- templates/blog.hbs -->
+{{tumblr-blog
+  posts=model
+  collapsible=true
+  collapseByDefault=false}}
+```
+
+If you are using the `tumblr-post` component (or any of its derivatives) and want it to be `collapsible`, you can set the property there, too.
+
+```handlebars
+{{tumblr-post
+  post=model
+  collapsible=true <!-- allows the post to be collapsed -->
+  collapsed=false}} <!-- overrides the default to make it expanded when rendered -->
+
 ## Contributing To Ember-Tumblr
 
 ### Installation

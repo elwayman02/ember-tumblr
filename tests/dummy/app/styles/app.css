@@ -4,7 +4,7 @@
   margin-bottom: 5px;
 }
 
-.tumblr-body.collapsed {
+.tumblr-post.tumblr-post-collapsed .tumblr-body {
   max-height: 300px;
   overflow: hidden;
 }

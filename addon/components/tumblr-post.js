@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['tumblr-post'],
+  classNameBindings: ['isCollapsed:tumblr-post-collapsed'],
   postsRoute: null,
   collapsible: false,
   collapsed: true,
