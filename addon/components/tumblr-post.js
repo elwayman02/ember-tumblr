@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   postsRoute: null,
   collapsible: false,
   collapsed: true,
+  formatDates: true,
 
   collapsedText: 'View More',
   expandedText: 'Collapse Post',
