@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('linked-blog');
   this.route('collapsed-blog');
   this.route('uncollapsed-blog');
+  this.route('sorted-blog');
   this.route('post', { path: '/posts/:post_id' });
 });
 
