@@ -130,6 +130,29 @@ If you are using the `tumblr-post` component (or any of its derivatives) and wan
   collapsible=true <!-- allows the post to be collapsed -->
   collapsed=false}} <!-- overrides the default to make it expanded when rendered -->
 
+### Sorting Posts
+
+By default, Ember-Tumblr doesn't attempt to do any sorting on your behalf. However, should you want the component to perform sorting operations for you, 
+simply pass in the `sortBy` properties as an array, exactly as described for [Ember.computed.sort](http://emberjs.com/api/classes/Ember.computed.html#method_sort).
+
+```javascript
+// controllers/blog.js (or components/blog.js, once routeable components land in Ember)
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  sortBy: ['date:asc']
+});
+```
+
+```handlebars
+<!-- templates/blog.hbs -->
+{{tumblr-blog
+  posts=model
+  sortBy=sortBy}}
+```
+
+Ember-Tumblr can handle multiple sort properties, just like the computed macro in Ember (because that's what we use!).
+
 ## Contributing To Ember-Tumblr
 
 ### Installation
