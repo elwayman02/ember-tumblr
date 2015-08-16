@@ -10,6 +10,10 @@
 
 <span class="tumblr-date">{{post.date}}</span>
 
-<div class="tumblr-body">
+<div class="tumblr-body {{if isCollapsed 'collapsed'}}">
   {{{post.body}}}
 </div>
+
+{{#if collapsible}}
+  <button {{action 'expand'}} class="tumblr-expand-button">{{expandText}}</button>
+{{/if}}

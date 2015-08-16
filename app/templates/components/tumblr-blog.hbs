@@ -1,5 +1,21 @@
 {{#each posts as |post|}}
-  {{tumblr-post
+  {{#if collapsible}}
+    {{#if collapsedByDefault}}
+      {{tumblr-post
+      post=post
+      postsRoute=postsRoute
+      collapsible=true
+      collapsed=true}}
+    {{else}}
+      {{tumblr-post
+      post=post
+      postsRoute=postsRoute
+      collapsible=true
+      collapsed=false}}
+    {{/if}}
+  {{else}}
+    {{tumblr-post
     post=post
     postsRoute=postsRoute}}
+  {{/if}}
 {{/each}}
