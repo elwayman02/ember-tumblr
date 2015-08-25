@@ -1,6 +1,7 @@
 # Ember Tumblr
 
 [![Build Status](https://travis-ci.org/elwayman02/ember-tumblr.svg?branch=master)](https://travis-ci.org/elwayman02/ember-tumblr)
+[![npm version](https://badge.fury.io/js/ember-tumblr.svg)](http://badge.fury.io/js/ember-tumblr)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-tumblr.svg)](http://emberobserver.com/addons/ember-tumblr)
 [![Codacy Badge](https://www.codacy.com/project/badge/3d21cc0516214628900f3403de2ebe63)](https://www.codacy.com/app/hawker-jordan/ember-tumblr)
 [![Code Climate](https://codeclimate.com/github/elwayman02/ember-tumblr/badges/gpa.svg)](https://codeclimate.com/github/elwayman02/ember-tumblr)
