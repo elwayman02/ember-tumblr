@@ -1,11 +1,12 @@
 # Ember Tumblr
 
 [![Build Status](https://travis-ci.org/elwayman02/ember-tumblr.svg?branch=master)](https://travis-ci.org/elwayman02/ember-tumblr)
-[![npm version](https://badge.fury.io/js/ember-tumblr.svg)](http://badge.fury.io/js/ember-tumblr)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-tumblr.svg)](http://emberobserver.com/addons/ember-tumblr)
 [![Codacy Badge](https://www.codacy.com/project/badge/3d21cc0516214628900f3403de2ebe63)](https://www.codacy.com/app/hawker-jordan/ember-tumblr)
 [![Code Climate](https://codeclimate.com/github/elwayman02/ember-tumblr/badges/gpa.svg)](https://codeclimate.com/github/elwayman02/ember-tumblr)
 [![Dependency Status](https://www.versioneye.com/user/projects/55916efd396561001900007a/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55916efd396561001900007a)
+
+[![NPM](https://nodei.co/npm/ember-tumblr.png)](https://nodei.co/npm/ember-tumblr/)
 
 This addon allows you to quickly and effortlessly integrate the Tumblr API into your Ember application.
 
