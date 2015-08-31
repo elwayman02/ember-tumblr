@@ -7,7 +7,7 @@ export default DS.Model.extend({
   post_url: attr('string'),
   type: attr('string'),
   timestamp: attr('number'),
-  date: attr('string'),
+  date: attr('date'),
   format: attr('string'),
   reblog_key: attr('string'),
   // tags

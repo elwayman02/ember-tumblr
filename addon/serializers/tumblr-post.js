@@ -30,6 +30,7 @@ export default DS.RESTSerializer.extend({
   normalizePayload(payload) {
     if (payload.response && payload.response.posts) {
       const posts = payload.response.posts.map(function (post) {
+        post.date = new Date().toDateString(post.date);
         delete post.tags;
         return post;
       });
