@@ -179,7 +179,7 @@ We would happily accept Pull Requests for making date formatting in Ember-Tumblr
 
 ### Known Bugs
 
-Filtering text posts by tag via the Tumblr has been broken for quite some time now. 
+Filtering text posts by tag via the Tumblr API has been broken for quite some time now. 
 View the [Tumblr API Google Group](https://groups.google.com/forum/#!topic/tumblr-api/WMCNWES07TY) for more info.
 
 Workaround: Retrieve all posts (without) type, only the text post API is bugged.
