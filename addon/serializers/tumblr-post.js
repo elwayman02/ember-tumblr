@@ -4,15 +4,19 @@ import DS from 'ember-data';
 export default DS.RESTSerializer.extend({
   /**
    * Post Type
-   * @type {string}
-   * @default
+   *
+   * @property type
+   * @type {String}
+   * @default ''
    */
   type: '',
 
   /**
    * Use Post Type to determine model name for serializing
-   * @param {string} payloadKey The incoming payload key
-   * @returns {string} The modified key
+   *
+   * @method modelNameFromPayloadKey
+   * @param {String} payloadKey The incoming payload key
+   * @return {String} The modified key
    */
   modelNameFromPayloadKey(payloadKey) {
     const type = this.get('type');
@@ -24,18 +28,35 @@ export default DS.RESTSerializer.extend({
 
   /**
    * Normalize the payload to match our models
-   * @param {object} payload The incoming payload
-   * @returns {object} The modified payload
+   *
+   * @method normalizePayload
+   * @param {Object} payload The incoming payload
+   * @return {Object} The modified payload
+   * @public
    */
   normalizePayload(payload) {
     if (payload.response && payload.response.posts) {
-      const posts = payload.response.posts.map(function (post) {
-        post.date = new Date().toDateString(post.date);
+      const posts = payload.response.posts.map((post) => {
+        post.date = this.normalizeDate(post.date);
         delete post.tags;
         return post;
       });
       return { 'tumblr-posts': posts };
     }
     return payload;
+  },
+
+  /**
+   * Convert date from Tumblr API format to ISO string
+   *
+   * @method normalizeDate
+   * @param {String} date The date string
+   * @return {Date} normalized date object
+   * @private
+   */
+  normalizeDate(date) {
+    date = date.split(' ');
+    date.pop(); // remove GMT from date string
+    return `${date.join('T')}.000Z`;
   }
 });
