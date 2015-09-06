@@ -1,1 +1,18 @@
+<h1 class="title"><a href="https://github.com/elwayman02/ember-tumblr" target="_blank">Ember-Tumblr Demo App</a></h1>
+
+<div class="header">
+    <h2>Examples </h2>
+
+    {{#link-to 'index'}}<button>Home</button>{{/link-to}}
+    {{#link-to 'blog'}}<button>Default Blog</button>{{/link-to}}
+    {{#link-to 'linked-blog'}}<button>Blog w/ Links</button>{{/link-to}}
+    {{#link-to 'collapsed-blog'}}<button>Collapsible Posts (Already Collapsed)</button>{{/link-to}}
+    {{#link-to 'uncollapsed-blog'}}<button>Collapsible Posts (Uncollapsed by Default)</button>{{/link-to}}
+    {{#link-to 'sorted-blog'}}<button>Sorted Posts</button>{{/link-to}}
+    {{#link-to 'no-format-blog'}}<button>Unformatted Dates</button>{{/link-to}}
+    {{#link-to 'error-blog'}}<button>No Posts Error</button>{{/link-to}}
+</div>
+
+<hr>
+
 {{outlet}}

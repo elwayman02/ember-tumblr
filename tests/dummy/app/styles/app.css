@@ -1,10 +1,22 @@
-.index button {
-  display: block;
-  padding: 10px;
-  margin-bottom: 5px;
+body {
+    padding: 0 10px;
+}
+
+.header,
+.title {
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 5px;
+}
+
+.header button {
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .tumblr-post.tumblr-post-collapsed .tumblr-body {
-  max-height: 300px;
-  overflow: hidden;
+    max-height: 300px;
+    overflow: hidden;
 }
