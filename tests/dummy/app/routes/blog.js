@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.find('tumblr-post-text');
+    return this.store.findAll('tumblr-post-text');
   }
 });
