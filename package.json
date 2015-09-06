@@ -1,6 +1,6 @@
 {
   "name": "ember-tumblr",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Ember Addon for integrating a Tumblr blog",
   "directories": {
     "doc": "doc",
@@ -34,7 +34,7 @@
     "ember-cli-inject-live-reload": "~1.3.1",
     "ember-cli-qunit": "~1.0.0",
     "ember-cli-uglify": "~1.2.0",
-    "ember-data": "1.0.0-beta.18",
+    "ember-data": "1.13.11",
     "ember-disable-prototype-extensions": "^1.0.0",
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "~1.0.3",
