@@ -186,6 +186,8 @@ Workaround: Retrieve all posts (without) type, only the text post API is bugged.
 
 ## Contributing To Ember-Tumblr
 
+[CONTRIBUTING.md](https://github.com/elwayman02/ember-tumblr/blob/master/CONTRIBUTING.md) details how to contribute to this project.
+
 ### Installation
 
 * `git clone git@github.com:elwayman02/ember-tumblr.git`
