@@ -32,7 +32,7 @@
     "ember-cli-github-pages": "elwayman02/ember-cli-github-pages#ember-1.13.9",
     "ember-cli-ic-ajax": "0.2.1",
     "ember-cli-inject-live-reload": "~1.3.1",
-    "ember-cli-qunit": "~1.0.0",
+    "ember-cli-qunit": "~1.2.1",
     "ember-cli-uglify": "~1.2.0",
     "ember-data": "1.13.11",
     "ember-disable-prototype-extensions": "^1.0.0",
