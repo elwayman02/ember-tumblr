@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 
-export default DS.RESTSerializer.extend({
+export default DS.JSONSerializer.extend({
   /**
    * Post Type
    *
@@ -34,14 +34,19 @@ export default DS.RESTSerializer.extend({
    * @return {Object} The modified payload
    * @public
    */
-  normalizePayload(payload) {
+  normalizeResponse(store, primaryModelClass, payload) {
     if (payload.response && payload.response.posts) {
-      const posts = payload.response.posts.map((post) => {
+      let type = this.get('type') ? `-${this.get('type')}` : '';
+      let data = payload.response.posts.map((post) => {
         post.date = this.normalizeDate(post.date);
         delete post.tags;
-        return post;
+        return {
+          id: post.id,
+          type: `tumblr-post${type}`,
+          attributes: post
+        };
       });
-      return { 'tumblr-posts': posts };
+      return { data };
     }
     return payload;
   },

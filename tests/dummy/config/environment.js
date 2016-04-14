@@ -44,7 +44,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/ember-tumblr';
+    ENV.baseURL = '/ember-tumblr/';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
