@@ -202,5 +202,12 @@ Workaround: Retrieve all posts (without) type, only the text post API is bugged.
 
 ### Running Tests
 
-* `npm test`
-* `npm test --server`
+* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
+* `ember test`
+* `ember test --server`
+
+### Building
+
+* `ember build`
+
+For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).

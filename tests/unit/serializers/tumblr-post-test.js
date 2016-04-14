@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('tumblr-post', 'Unit | Serializer | tumblr-post', {

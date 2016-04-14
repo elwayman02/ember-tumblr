@@ -39,7 +39,7 @@ test('ajaxOptions', function (assert) {
     apiKey
   });
   const hash = {};
-  const spy = Edgar.createSpy(adapter, '_super', hash);
+  Edgar.createSpy(adapter, '_super', hash);
 
   const result = adapter.ajaxOptions();
   const data = result.data;
