@@ -159,7 +159,7 @@ Ember-Tumblr can handle multiple sort properties, just like the computed macro i
 
 ### Date Formatting
 
-Ember-Tumblr uses [Ember-Intl](https://github.com/yahoo/ember-intl) (currently `2.0.0-beta.17) for displaying formatted dates. 
+Ember-Tumblr uses [Ember-Intl](https://github.com/yahoo/ember-intl) (currently `2.9.3`) for displaying formatted dates. 
 Please follow their README for installation instructions. If you would prefer not to use Ember-Intl, you can set the `formatDates` flag to false:
 
 ```handlebars
@@ -191,6 +191,7 @@ Workaround: Retrieve all posts (without) type, only the text post API is bugged.
 ### Installation
 
 * `git clone git@github.com:elwayman02/ember-tumblr.git`
+* `cd ember-tumblr`
 * `npm install -g ember-cli`
 * `npm install`
 * `bower install`
