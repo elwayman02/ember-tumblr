@@ -198,7 +198,7 @@ Workaround: Retrieve all posts (without) type, only the text post API is bugged.
 
 ### Running
 
-* `ember s` or `ember server`
+* `ember serve`
 * Visit your app at http://localhost:4200.
 
 ### Running Tests
