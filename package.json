@@ -1,6 +1,6 @@
 {
   "name": "ember-tumblr",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Ember Addon for integrating a Tumblr blog",
   "directories": {
     "doc": "doc",
