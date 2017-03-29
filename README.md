@@ -192,14 +192,13 @@ Workaround: Retrieve all posts (without) type, only the text post API is bugged.
 
 * `git clone git@github.com:elwayman02/ember-tumblr.git`
 * `cd ember-tumblr`
-* `npm install -g ember-cli`
 * `npm install`
 * `bower install`
 
 ### Running
 
 * `ember serve`
-* Visit your app at http://localhost:4200.
+* Visit your app at [http://localhost:4200](http://localhost:4200).
 
 ### Running Tests
 
@@ -211,4 +210,4 @@ Workaround: Retrieve all posts (without) type, only the text post API is bugged.
 
 * `ember build`
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).

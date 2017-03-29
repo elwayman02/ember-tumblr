@@ -1,11 +1,6 @@
 {
   "name": "ember-tumblr",
-  "dependencies": {
-    "ember": "~2.7.0",
-    "ember-cli-shims": "0.1.1"
-  },
   "devDependencies": {
-    "js.edgar": "1.0.3",
-    "ember-qunit-notifications": "0.1.0"
+    "js.edgar": "1.0.3"
   }
 }
