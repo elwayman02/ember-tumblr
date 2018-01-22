@@ -1,4 +1,3 @@
-/* globals Edgar */
 import { isPresent } from '@ember/utils';
 import { moduleFor, test } from 'ember-qunit';
 
@@ -40,7 +39,9 @@ test('ajaxOptions', function (assert) {
     apiKey
   });
   const hash = {};
-  Edgar.createSpy(adapter, '_super', hash);
+  adapter._super = function () {
+    return hash;
+  };
 
   const result = adapter.ajaxOptions();
   const data = result.data;
