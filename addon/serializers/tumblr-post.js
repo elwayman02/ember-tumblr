@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { isPresent } from '@ember/utils';
 import DS from 'ember-data';
 
 export default DS.JSONSerializer.extend({
@@ -20,7 +20,7 @@ export default DS.JSONSerializer.extend({
    */
   modelNameFromPayloadKey(payloadKey) {
     const type = this.get('type');
-    if (Ember.isPresent(type)) {
+    if (isPresent(type)) {
       return this._super(`${payloadKey.substring(0, payloadKey.length-1)}-${type}`);
     }
     return this._super(payloadKey);

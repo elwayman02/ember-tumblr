@@ -1,6 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   /**
    * Class names for the component
    * @type {Array.string}
@@ -62,7 +63,7 @@ export default Ember.Component.extend({
    * @type {boolean}
    * @default
    */
-  isCollapsed: Ember.computed('collapsible', 'collapsed', function () {
+  isCollapsed: computed('collapsible', 'collapsed', function () {
     return this.get('collapsible') && this.get('collapsed');
   }),
 
@@ -71,7 +72,7 @@ export default Ember.Component.extend({
    * @type {string}
    * @default
    */
-  expandButtonText: Ember.computed('isCollapsed', 'collapsedText', 'expandedText', function () {
+  expandButtonText: computed('isCollapsed', 'collapsedText', 'expandedText', function () {
     return this.get('isCollapsed') ? this.get('collapsedText') : this.get('expandedText');
   }),
 

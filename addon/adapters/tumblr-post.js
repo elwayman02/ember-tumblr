@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { isPresent } from '@ember/utils';
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
@@ -35,7 +36,7 @@ export default DS.RESTAdapter.extend({
    * @returns {string} API path with type string appended
    */
   pathForType() {
-    const type = Ember.isPresent(this.get('type')) ? `/${this.get('type')}` : '';
+    const type = isPresent(this.get('type')) ? `/${this.get('type')}` : '';
     return `posts${type}`;
   },
 
@@ -43,7 +44,7 @@ export default DS.RESTAdapter.extend({
    * Build namespace from blogURL
    * @returns {string} Tumblr API namespace with blogURL appended
    */
-  namespace: Ember.computed('blogURL', function () {
+  namespace: computed('blogURL', function () {
     return `v2/blog/${this.get('blogUrl')}`;
   }),
 
