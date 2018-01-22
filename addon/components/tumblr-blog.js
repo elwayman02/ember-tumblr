@@ -8,7 +8,7 @@ export default Component.extend({
    * @type {Array.string}
    * @default
    */
-  classNames: ['tumblr-blog'],
+  classNames: 'tumblr-blog',
 
   /**
    * Route to link posts to
