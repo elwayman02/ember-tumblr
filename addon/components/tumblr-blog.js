@@ -55,7 +55,7 @@ export default Component.extend({
    * @type {Array.string}
    * @default
    */
-  sortBy: [],
+  sortBy: null,
 
   /**
    * Posts to be displayed
@@ -69,5 +69,11 @@ export default Component.extend({
    * @type {Array.Tumblr-Post}
    * @default
    */
-  sortedPosts: computed.sort('posts', 'sortBy')
+  sortedPosts: computed.sort('posts', 'sortBy'),
+
+  init() {
+    this._super(...arguments);
+
+    this.set('sortBy', []);
+  }
 });
