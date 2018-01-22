@@ -1,4 +1,5 @@
 import { moduleForModel, test } from 'ember-qunit';
+// import { isPresent } from '@ember/utils';
 
 moduleForModel('tumblr-post', 'Unit | Serializer | tumblr-post', {
   // Specify the other units that are required for this test.
@@ -26,5 +27,5 @@ test('it serializes records', function (assert) {
 //
 //  const result = record.normalizePayload(payload);
 //  const posts = result['tumblr-posts'];
-//  assert.ok(Ember.isPresent(posts), 'posts mapped to the correct key');
+//  assert.ok(isPresent(posts), 'posts mapped to the correct key');
 //});

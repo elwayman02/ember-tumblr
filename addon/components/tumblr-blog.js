@@ -1,12 +1,14 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { A } from '@ember/array';
+import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   /**
    * Class names for the component
    * @type {Array.string}
    * @default
    */
-  classNames: ['tumblr-blog'],
+  classNames: 'tumblr-blog',
 
   /**
    * Route to link posts to
@@ -53,19 +55,25 @@ export default Ember.Component.extend({
    * @type {Array.string}
    * @default
    */
-  sortBy: [],
+  sortBy: null,
 
   /**
    * Posts to be displayed
    * @type {Array.Tumblr-Post}
    * @default
    */
-  posts: Ember.A([]),
+  posts: A([]),
 
   /**
    * Sorted array of posts
    * @type {Array.Tumblr-Post}
    * @default
    */
-  sortedPosts: Ember.computed.sort('posts', 'sortBy')
+  sortedPosts: computed.sort('posts', 'sortBy'),
+
+  init() {
+    this._super(...arguments);
+
+    this.set('sortBy', []);
+  }
 });

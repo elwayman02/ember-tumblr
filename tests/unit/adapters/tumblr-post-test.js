@@ -1,5 +1,4 @@
-/* globals Edgar */
-import Ember from 'ember';
+import { isPresent } from '@ember/utils';
 import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('adapter:tumblr-post', 'Unit | Adapter | tumblr-post', {
@@ -40,12 +39,14 @@ test('ajaxOptions', function (assert) {
     apiKey
   });
   const hash = {};
-  Edgar.createSpy(adapter, '_super', hash);
+  adapter._super = function () {
+    return hash;
+  };
 
   const result = adapter.ajaxOptions();
   const data = result.data;
 
-  assert.ok(Ember.isPresent(data), 'data object is added if not present');
+  assert.ok(isPresent(data), 'data object is added if not present');
   assert.equal(data.api_key, apiKey, 'apiKey is added to data');
   assert.equal(result.dataType, 'jsonp', 'dataType is jsonp');
 });

@@ -1,4 +1,5 @@
-# Ember Tumblr
+Ember Tumblr
+==============================================================================
 
 [![Build Status](https://travis-ci.org/elwayman02/ember-tumblr.svg?branch=master)](https://travis-ci.org/elwayman02/ember-tumblr)
 [![npm version](https://badge.fury.io/js/ember-tumblr.svg)](http://badge.fury.io/js/ember-tumblr)
@@ -13,15 +14,18 @@ This addon allows you to quickly and effortlessly integrate the Tumblr API into 
 
 Note: This project is still in a pre-stable (1.0.0) release.  Not all functionality is supported, but the basic text post usage is stable.
 
-## Usage
+Installation
+------------------------------------------------------------------------------
 
-First, and most importantly, make sure to register a Tumblr application for your account to get an OAuth key: https://www.tumblr.com/oauth/apps
-
-Then, install this addon:
-
-```shell
+```
 ember install ember-tumblr
 ```
+
+
+Usage
+------------------------------------------------------------------------------
+
+First, and most importantly, make sure to register a Tumblr application for your account to get an OAuth key: https://www.tumblr.com/oauth/apps
 
 Once you have that, create an adapter named `tumblr-post` to set up your blog url and API key.
 
@@ -39,11 +43,11 @@ Then, simply create a route for your blog to retrieve the data, and utilize the 
 
 ```javascript
 // routes/blog.js
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() { // Retrieve all posts of type "text"
-    return this.store.findAll('tumblr-post-text');
+    return this.get('store').findAll('tumblr-post-text');
   }
 });
 ```
@@ -71,11 +75,11 @@ Then, define the route and template for your `postsRoute`:
 
 ```javascript
 // routes/post.js
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model(params/*, transition*/) {
-    return this.store.findAll('tumblr-post-text', {
+    return this.get('store').findAll('tumblr-post-text', {
       id: params.post_id
     }).then(function (posts) {
       return posts.get('firstObject');
@@ -141,9 +145,9 @@ simply pass in the `sortBy` properties as an array, exactly as described for [Em
 
 ```javascript
 // controllers/blog.js (or components/blog.js, once routeable components land in Ember)
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
+export default Controller.extend({
   sortBy: ['date:asc']
 });
 ```
@@ -184,7 +188,9 @@ View the [Tumblr API Google Group](https://groups.google.com/forum/#!topic/tumbl
 
 Workaround: Retrieve all posts (without) type, only the text post API is bugged.
 
-## Contributing To Ember-Tumblr
+
+Contributing
+------------------------------------------------------------------------------
 
 [CONTRIBUTING.md](https://github.com/elwayman02/ember-tumblr/blob/master/CONTRIBUTING.md) details how to contribute to this project.
 
@@ -192,22 +198,27 @@ Workaround: Retrieve all posts (without) type, only the text post API is bugged.
 
 * `git clone git@github.com:elwayman02/ember-tumblr.git`
 * `cd ember-tumblr`
-* `npm install`
-* `bower install`
+* `yarn install`
 
-### Running
+### Linting
+
+* `yarn lint:js`
+* `yarn lint:js --fix`
+
+### Running tests
+
+* `ember test` – Runs the test suite on the current Ember version
+* `ember test --server` – Runs the test suite in "watch mode"
+* `yarn test` – Runs `ember try:each` to test your addon against multiple Ember versions
+
+### Running the dummy application
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build`
+* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).

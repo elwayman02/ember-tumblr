@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { isPresent } from '@ember/utils';
 import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('tumblr-post', 'Unit | Component | tumblr post', {
@@ -21,13 +21,13 @@ test('it renders', function (assert) {
 test('defaults', function (assert) {
   const component = this.subject();
 
-  assert.ok(!Ember.isPresent(component.get('postsRoute')), 'postsRoute is not defined by default');
+  assert.ok(!isPresent(component.get('postsRoute')), 'postsRoute is not defined by default');
   assert.ok(!component.get('collapsible'), 'post is not collapsible by default');
   assert.ok(component.get('collapsed'), 'post is set to collapse by default if collapsible');
   assert.ok(!component.get('isCollapsed'), 'post will not collapse by default, because it is not collapsible');
   assert.ok(component.get('formatDates'), 'date formatting enabled by default');
-  assert.ok(Ember.isPresent(component.get('collapsedText')), 'default collapsedText is supplied');
-  assert.ok(Ember.isPresent(component.get('expandedText')), 'default expandedText is supplied');
+  assert.ok(isPresent(component.get('collapsedText')), 'default collapsedText is supplied');
+  assert.ok(isPresent(component.get('expandedText')), 'default expandedText is supplied');
 });
 
 test('isCollapsed', function (assert) {

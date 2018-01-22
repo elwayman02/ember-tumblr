@@ -7,6 +7,6 @@ moduleForModel('tumblr-post', 'Unit | Model | tumblr-post', {
 
 test('it exists', function(assert) {
   var model = this.subject();
-  // var store = this.store();
+  // var store = this.get('store')();
   assert.ok(!!model);
 });
