@@ -1,7 +1,7 @@
 import { isPresent } from '@ember/utils';
 import DS from 'ember-data';
 
-export default DS.JSONSerializer.extend({
+export default DS.RESTSerializer.extend({
   /**
    * Post Type
    *
@@ -34,7 +34,7 @@ export default DS.JSONSerializer.extend({
    * @return {Object} The modified payload
    * @public
    */
-  normalizeResponse(store, primaryModelClass, payload) {
+  normalizeResponse(store, primaryModelClass, payload, id, requestType) {
     if (payload.response && payload.response.posts) {
       let type = this.get('type') ? `-${this.get('type')}` : '';
       let data = payload.response.posts.map((post) => {
@@ -46,9 +46,16 @@ export default DS.JSONSerializer.extend({
           attributes: post
         };
       });
+      if (requestType === 'queryRecord' || requestType === 'findRecord') {
+        return { data: data[0] };
+      }
       return { data };
     }
     return payload;
+  },
+
+  normalizeQueryRecordResponse() {
+    return this.normalizeArrayResponse(...arguments)[0];
   },
 
   /**
