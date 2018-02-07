@@ -54,10 +54,6 @@ export default DS.RESTSerializer.extend({
     return payload;
   },
 
-  normalizeQueryRecordResponse() {
-    return this.normalizeArrayResponse(...arguments)[0];
-  },
-
   /**
    * Convert date from Tumblr API format to ISO string
    *
