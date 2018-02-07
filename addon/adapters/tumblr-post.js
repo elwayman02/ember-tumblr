@@ -32,15 +32,6 @@ export default DS.RESTAdapter.extend({
   type: '',
 
   /**
-   * Build path from type
-   * @returns {string} API path with type string appended
-   */
-  pathForType() {
-    const type = isPresent(this.get('type')) ? `/${this.get('type')}` : '';
-    return `posts${type}`;
-  },
-
-  /**
    * Build namespace from blogURL
    * @returns {string} Tumblr API namespace with blogURL appended
    */
@@ -49,8 +40,19 @@ export default DS.RESTAdapter.extend({
   }),
 
   /**
+   * Build path from type
+   * @method pathForType
+   * @returns {string} API path with type string appended
+   */
+  pathForType() {
+    const type = isPresent(this.get('type')) ? `/${this.get('type')}` : '';
+    return `posts${type}`;
+  },
+
+  /**
    * Build hash for AJAX call
    * Appends API key and sets data type
+   * @method ajaxOptions
    * @returns {object} hash of AJAX options
    */
   ajaxOptions() {
@@ -59,5 +61,16 @@ export default DS.RESTAdapter.extend({
     hash.data.api_key = this.get('apiKey');
     hash.dataType = 'jsonp';
     return hash;
+  },
+
+  /**
+   * We need to make sure the cache is fresh;
+   * if you load 1 post into the store,
+   * it won't fetch all posts later
+   * @method shouldReloadAll
+   * @returns {boolean}
+   */
+  shouldReloadAll() {
+    return true;
   }
 });
