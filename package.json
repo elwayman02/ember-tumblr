@@ -1,6 +1,6 @@
 {
   "name": "ember-tumblr",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "description": "Ember Addon for integrating a Tumblr blog",
   "keywords": [
     "ember-addon",
