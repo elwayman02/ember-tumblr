@@ -1,6 +1,15 @@
-{{tumblr-post-text
-  post=post
-  postsRoute=postsRoute
-  collapsible=collapsible
-  collapsed=collapsed
-  formatDates=formatDates}}
+{{#if post.isPhotoEntry}}
+  {{tumblr-post-photo
+    post=post
+    postsRoute=postsRoute
+    collapsible=collapsible
+    collapsed=collapsed
+    formatDates=formatDates}}
+{{else}}
+  {{tumblr-post-text
+    post=post
+    postsRoute=postsRoute
+    collapsible=collapsible
+    collapsed=collapsed
+    formatDates=formatDates}}
+{{/if}}

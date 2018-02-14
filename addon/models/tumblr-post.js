@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { equal } from '@ember/object/computed';
 
 const attr = DS.attr;
 
@@ -17,5 +18,6 @@ export default DS.Model.extend({
   source_title: attr('string'),
   liked: attr('boolean'),
   state: attr('string'),
-  total_posts: attr('number')
+  total_posts: attr('number'),
+  isPhotoEntry: equal('type', 'photo')    
 });
