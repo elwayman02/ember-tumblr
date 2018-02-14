@@ -1,0 +1,33 @@
+<span class="tumblr-title">
+  {{#if postsRoute}}
+    {{#link-to postsRoute post.id}}
+      {{post.title}}
+    {{/link-to}}
+  {{else}}
+    {{post.title}}
+  {{/if}}
+</span>
+
+<span class="tumblr-date">
+  {{#if formatDates}}
+    {{format-date post.date day='numeric' month='long' year='numeric'}}
+  {{else}}
+    {{post.date}}
+  {{/if}}
+</span>
+
+<div class="tumblr-body">
+  {{#each post.photos as |photo|}}
+      <img class="tumblr-photo" src={{photo.alt_sizes.[0].url}}/>    
+  {{/each}} 
+
+  <span class="tumblr-caption">
+    {{{post.caption}}}
+  </span>
+</div>
+
+
+{{#if collapsible}}
+  <button {{action 'expand'}} class="tumblr-expand-button">{{expandButtonText}}</button>
+{{/if}}
+
