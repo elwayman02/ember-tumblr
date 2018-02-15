@@ -1,6 +1,5 @@
 import DS from 'ember-data';
-
-const attr = DS.attr;
+import attr from 'ember-data/attr';
 
 export default DS.Model.extend({
   blog_name: attr('string'),
@@ -17,5 +16,5 @@ export default DS.Model.extend({
   source_title: attr('string'),
   liked: attr('boolean'),
   state: attr('string'),
-  total_posts: attr('number')
+  total_posts: attr('number')  
 });

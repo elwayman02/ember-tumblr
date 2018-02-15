@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('no-format-blog');
   this.route('error-blog');
   this.route('post', { path: '/posts/:post_id' });
+  this.route('photo-blog');
 });
 
 export default Router;

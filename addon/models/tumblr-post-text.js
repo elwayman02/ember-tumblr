@@ -1,7 +1,5 @@
-import DS from 'ember-data';
 import Post from './tumblr-post';
-
-const attr = DS.attr;
+import attr from 'ember-data/attr';
 
 export default Post.extend({
   title: attr('string'),

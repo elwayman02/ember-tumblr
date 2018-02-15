@@ -2,7 +2,7 @@ import { isPresent } from '@ember/utils';
 import { moduleForComponent, test } from 'ember-qunit';
 
 moduleForComponent('tumblr-post', 'Unit | Component | tumblr post', {
-  needs: ['component:tumblr-post-text'],
+  needs: ['component:tumblr-post-text', 'helper:eq'],
   unit: true
 });
 
