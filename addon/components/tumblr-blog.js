@@ -36,7 +36,7 @@ export default Component.extend({
    * @type {boolean}
    * @default
    */
-  formatDates: true,
+  formatDates: false,
 
   /**
    * Display an error message instead of attempting to render posts when none are returned

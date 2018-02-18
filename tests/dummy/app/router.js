@@ -13,7 +13,7 @@ Router.map(function() {
   this.route('collapsed-blog');
   this.route('uncollapsed-blog');
   this.route('sorted-blog');
-  this.route('no-format-blog');
+  this.route('format-blog');
   this.route('error-blog');
   this.route('post', { path: '/posts/:post_id' });
   this.route('photo-blog');
