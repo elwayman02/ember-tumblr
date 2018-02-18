@@ -42,7 +42,7 @@ export default Component.extend({
    * @type {boolean}
    * @default
    */
-  formatDates: true,
+  formatDates: false,
 
   /**
    * Text to display when post is collapsed
