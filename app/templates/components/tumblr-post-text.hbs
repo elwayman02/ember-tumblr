@@ -10,7 +10,7 @@
 
 <span class="tumblr-date">
   {{#if formatDates}}
-    {{format-date post.date day='numeric' month='long' year='numeric'}}
+    {{moment-format post.date}}
   {{else}}
     {{post.date}}
   {{/if}}

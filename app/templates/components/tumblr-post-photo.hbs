@@ -10,7 +10,7 @@
 
 <span class="tumblr-date">
   {{#if formatDates}}
-    {{format-date post.date day='numeric' month='long' year='numeric'}}
+    {{moment-format post.date}}
   {{else}}
     {{post.date}}
   {{/if}}
@@ -18,8 +18,8 @@
 
 <div class="tumblr-body">
   {{#each post.photos as |photo|}}
-      <img class="tumblr-photo" src={{photo.alt_sizes.[0].url}}/>    
-  {{/each}} 
+      <img class="tumblr-photo" src={{photo.alt_sizes.[0].url}}/>
+  {{/each}}
 
   <span class="tumblr-caption">
     {{{post.caption}}}

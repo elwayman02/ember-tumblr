@@ -161,23 +161,26 @@ Ember-Tumblr can handle multiple sort properties, just like the computed macro i
 
 ### Date Formatting
 
-Ember-Tumblr uses [Ember-Intl](https://github.com/yahoo/ember-intl) (currently `2.9.3`) for displaying formatted dates. 
-Please follow their README for installation instructions. If you would prefer not to use Ember-Intl, you can set the `formatDates` flag to false:
+Ember-Tumblr uses [Ember-Moment](https://github.com/stefanpenner/ember-moment) for displaying formatted dates. 
+This is an optional dependency that you can leverage by setting the `formatDates` flag to true:
 
 ```handlebars
 <!-- templates/blog.hbs -->
 {{tumblr-blog
   posts=model
-  formatDates=false}}
+  formatDates=true}}
 ```
 
 ```handlebars
 {{tumblr-post
   post=model
-  formatDates=false}}
+  formatDates=true}}
 ```
 
-We would happily accept Pull Requests for making date formatting in Ember-Tumblr more configurable!
+Refer to that package's [documentation](https://github.com/stefanpenner/ember-moment#global-default-output-format) 
+for information on setting the default date format in your application config.
+
+Note: You must install ember-moment in your application to use this feature.
 
 ### Known Bugs
 
