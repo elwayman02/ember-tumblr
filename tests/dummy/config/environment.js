@@ -23,7 +23,7 @@ module.exports = function(environment) {
     },
 
     moment: {
-      outputFormat: 'MM-DD-YYYY'
+      outputFormat: 'MMMM DD, YYYY'
     }
   };
 
