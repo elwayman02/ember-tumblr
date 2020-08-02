@@ -195,6 +195,8 @@ Contributing
 
 [CONTRIBUTING.md](https://github.com/elwayman02/ember-tumblr/blob/master/CONTRIBUTING.md) details how to contribute to this project.
 
+We adhere to the [Ember Community Guidelines](https://emberjs.com/guidelines/) for our Code of Conduct.
+
 ### Installation
 
 * `git clone git@github.com:elwayman02/ember-tumblr.git`
